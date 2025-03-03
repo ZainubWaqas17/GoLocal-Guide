@@ -1,0 +1,108 @@
+/* Custom styles */
+.hero-section {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .hero-background {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.5);
+  }
+  
+  .text-success-dark {
+    color: #065F46;
+  }
+  
+  .font-serif {
+    font-family: Georgia, serif;
+  }
+  
+  /* Adjust text sizes for responsiveness */
+  .custom-about-us {
+    font-size: 5rem;
+    color: #007A5A;
+    margin-top: 1.5rem;
+    margin-left: -2rem;
+  }
+  
+  .custom-discover {
+    font-size: 1.5rem;
+    color: #004F3D;
+    padding-top: -6rem;
+    margin-left: -2rem;
+    white-space: nowrap;
+  }
+  
+  /* Responsive font size for small screens */
+  @media (max-width: 1200px) { /* For medium-large screens */
+    .custom-about-us {
+      font-size: 4rem;
+    }
+  
+    .custom-discover {
+      font-size: 1.4rem;
+    }
+  }
+  
+  @media (max-width: 992px) { /* For medium screens */
+    .custom-about-us {
+      font-size: 3.5rem;
+    }
+  
+    .custom-discover {
+      font-size: 1.3rem;
+    }
+  }
+  
+  @media (max-width: 768px) { /* For small screens */
+    .hero-section {
+      height: auto; /* Allow the hero section to adjust height based on content */
+      min-height: 60vh; /* Set a minimum height for small screens */
+    }
+  
+    .hero-background {
+      height: 50%; /* Reduce the height of the image */
+    }
+  
+    .custom-about-us {
+      font-size: 3rem;
+      margin-left: 0; /* Remove the negative margin for better alignment */
+    }
+  
+    .custom-discover {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 576px) { /* For extra small screens */
+    .hero-section {
+      min-height: 50vh; /* Further reduce the height for very small screens */
+    }
+  
+    .hero-background {
+      height: 40%; /* Reduce image height more */
+    }
+  
+    .custom-about-us {
+      font-size: 2.5rem;
+      margin-left: 0;
+      text-align: center; /* Ensure text is centered on small screens */
+    }
+  
+    .custom-discover {
+      font-size: 1rem;
+      text-align: center; /* Center align the subheading */
+    }
+  }
+  

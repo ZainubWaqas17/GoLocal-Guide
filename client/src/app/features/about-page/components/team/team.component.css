@@ -1,0 +1,14 @@
+.team-avatar {
+    width: 192px;
+    height: 192px;
+    background-color: #D1FAE5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .team-avatar img {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+  }

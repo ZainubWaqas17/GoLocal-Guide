@@ -1,0 +1,19 @@
+<section class="py-5">
+    <div class="container">
+      <h2 class="text-center text-success mb-5 px-4" style="font-size: 2.3rem;">
+        GoLocal Guide gives you the tools you need to explore and connect with local experiences.
+      </h2>
+
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <div class="col" *ngFor="let feature of features">
+            <div class="text-center p-4 feature-box">
+              <div class="feature-icon mb-4 mx-auto">
+                <i [class]="feature.icon"></i>
+              </div>
+              <h3 class="h5 mb-3">{{feature.title}}</h3>
+              <p class="text-muted">{{feature.description}}</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>

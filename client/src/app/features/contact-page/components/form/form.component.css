@@ -1,0 +1,13 @@
+.form-control:focus {
+    border-color: #007A5A;
+    box-shadow: none;
+  }
+  .bg-success {
+    background-color: #007A5A !important;
+  }
+  .bg-success-dark {
+    background-color: #007A5A !important;
+  }
+  .btn:hover {
+    background-color: #007A5A !important;
+  }

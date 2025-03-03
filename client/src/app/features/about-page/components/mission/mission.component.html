@@ -1,0 +1,23 @@
+<div class="py-5 bg-white">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-7 fw-bold text-dark mb-3">Our Mission</h2>
+        <p class="fs-5 text-muted mx-auto" style="max-width: 600px;">
+          Creating meaningful connections between travelers and local communities
+        </p>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-md-4" *ngFor="let card of missionCards; let i = index" 
+             [@fadeIn]="{ value: '', params: { delay: (300 + (i * 100)) + 'ms' }}">
+          <div class="p-4 bg-light rounded-3 h-100 hover-shadow">
+            <div class="text-center">
+              <i [class]="card.icon + ' fs-1 text-success mb-3'"></i>
+              <h3 class="fs-4 fw-semibold text-dark">{{card.title}}</h3>
+              <p class="text-muted">{{card.description}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

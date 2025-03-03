@@ -1,0 +1,133 @@
+<div class="destination-details-container" *ngIf="destination">
+  <!-- Image Gallery Section -->
+  <div class="image-gallery">
+    <div class="main-image-wrapper">
+      <img [src]="imageGallery[selectedImageIndex]" [alt]="destination.name" class="main-image">
+      <div class="image-overlay">
+        <i class="bi bi-camera-fill"></i>
+        <span>{{imageGallery.length}} Photos</span>
+      </div>
+    </div>
+    <div class="thumbnail-container">
+      <img *ngFor="let image of imageGallery; let i = index" 
+           [src]="image" 
+           [alt]="destination.name + ' image ' + (i + 1)"
+           (click)="selectImage(i)"
+           [class.selected]="selectedImageIndex === i"
+           class="thumbnail">
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+    <!-- Main Content Section -->
+    <div class="destination-info">
+      <div class="info-header">
+        <div class="title-section">
+          <h1>{{ destination.name }}</h1>
+          <div class="location">
+            <i class="bi bi-geo-alt-fill"></i>
+            {{ destination.location }}
+          </div>
+          <div class="rating-section">
+            <div class="stars">
+              <i class="bi bi-star-fill" *ngFor="let star of [1,2,3,4,5]"></i>
+            </div>
+            <span class="rating-value">{{ destination.rating }}</span>
+            <span class="rating-count">(128 reviews)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Amenities Section Moved Up -->
+      <div class="info-card amenities-card">
+        <div class="card-header">
+          <i class="bi bi-check2-circle-fill"></i>
+          <h2>What's included</h2>
+        </div>
+        <div class="amenities-grid">
+          <div class="amenity-item" *ngFor="let amenity of destination.amenities">
+            <i [class]="getAmenityIcon(amenity)"></i>
+            <span>{{ amenity }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Highlights Section -->
+      <div class="info-card">
+        <div class="card-header">
+          <i class="bi bi-lightning-fill"></i>
+          <h2>Highlights</h2>
+        </div>
+        <ul class="highlights-list">
+          <li><i class="bi bi-check2-circle-fill"></i> Professional English-speaking guides</li>
+          <li><i class="bi bi-house-check-fill"></i> All-inclusive accommodation</li>
+          <li><i class="bi bi-car-front-fill"></i> Custom-designed safari vehicles</li>
+          <li><i class="bi bi-binoculars-fill"></i> Daily game drives</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Simplified Booking Sidebar -->
+    <div class="booking-sidebar">
+      <div class="booking-card">
+        <div class="price-section">
+          <span class="price">{{ destination.price | currency:'USD':'symbol':'1.2-2' }}</span>
+          <span class="per-night">per night</span>
+        </div>
+        
+        <button class="btn-book" (click)="proceedToBooking()">
+          <i class="bi bi-calendar2-check-fill"></i>
+          Book Now
+        </button>
+
+        <div class="booking-info">
+          <div class="info-item">
+            <i class="bi bi-lightning-fill"></i>
+            <span>Instant Booking Available</span>
+          </div>
+          <div class="info-item">
+            <i class="bi bi-shield-fill-check"></i>
+            <span>Free Cancellation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Similar Adventures -->
+  <div class="similar-section" *ngIf="similarDestinations.length > 0">
+    <div class="section-header">
+      <i class="bi bi-briefcase-fill"></i>
+      <h2>Similar Adventures</h2>
+    </div>
+    <div class="similar-grid">
+      <div class="similar-card" *ngFor="let similar of similarDestinations">
+        <div class="card-image">
+          <img [src]="similar.image" [alt]="similar.name">
+          <div class="card-badge">
+            <i class="bi bi-geo-alt-fill"></i>
+            {{similar.location}}
+          </div>
+        </div>
+        <div class="card-content">
+          <h3>{{ similar.name }}</h3>
+          <div class="card-info">
+            <div class="card-rating">
+              <i class="bi bi-star-fill"></i>
+              <span>{{ similar.rating }}</span>
+            </div>
+            <div class="card-price">
+              <span class="amount">{{ similar.price | currency:'USD':'symbol':'1.0-0' }}</span>
+              <span class="period">/night</span>
+            </div>
+          </div>
+          <button class="btn-view" (click)="viewSimilarDestination(similar.id)">
+            <i class="bi bi-arrow-right-circle-fill"></i>
+            View Details
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

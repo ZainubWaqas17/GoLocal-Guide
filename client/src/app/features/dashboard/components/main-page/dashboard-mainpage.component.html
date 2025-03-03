@@ -1,0 +1,131 @@
+<div class="dashboard-container">
+  <div class="welcome-section">
+    <h1 class="welcome-title">
+      <i class="bi bi-hand-wave-fill me-2"></i>
+      Hello, {{ username | titlecase }}!
+    </h1>
+    <p class="welcome-subtitle">
+      <i class="bi bi-compass me-2"></i>
+      Discover Your Next Adventure with GoLocal Guide
+    </p>
+  </div>
+
+  <!-- Search Section -->
+  <div class="search-section">
+    <form [formGroup]="searchForm" (ngSubmit)="onSearch()" class="search-form">
+      <div class="form-group">
+        <label for="destination">
+          <i class="bi bi-geo-alt-fill me-2"></i>
+          Where do you want to go?
+        </label>
+        <div class="input-with-icon">
+          <i class="bi bi-search"></i>
+          <input id="destination" type="text" formControlName="destination" placeholder="Search destinations">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="dateRange">
+          <i class="bi bi-calendar-range me-2"></i>
+          Check-in / Check-out
+        </label>
+        <mat-form-field appearance="outline" class="custom-datepicker">
+          <mat-date-range-input [rangePicker]="picker" [min]="minDate">
+            <input matStartDate placeholder="Check-in" formControlName="startDate">
+            <input matEndDate placeholder="Check-out" formControlName="endDate">
+          </mat-date-range-input>
+          <mat-datepicker-toggle matSuffix [for]="picker">
+            <i matDatepickerToggleIcon class="bi bi-calendar2-week"></i>
+          </mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+          <mat-error *ngIf="searchForm.get('startDate')?.hasError('minDate') || searchForm.get('endDate')?.hasError('minDate')">
+            Date cannot be earlier than today
+          </mat-error>
+          <mat-error *ngIf="searchForm.hasError('invalidDateRange')">
+            Check-out date must be after check-in date
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- Guests -->
+      <div class="form-group">
+        <label for="guests">
+          <i class="bi bi-people-fill me-2"></i>
+          Guests
+        </label>
+        <div class="input-with-icon">
+          <i class="bi bi-person-plus"></i>
+          <input id="guests" type="number" formControlName="guests" min="1" placeholder="Number of guests">
+        </div>
+      </div>
+      <!-- Submit -->
+      <button type="submit" class="btn-search" [disabled]="!searchForm.valid">
+        <i class="bi bi-search me-2"></i>
+        Search
+      </button>
+    </form>
+  </div>
+
+  <!-- Category -->
+  <div class="category-tabs">
+    <button [class.active]="selectedCategory === 'hotel'" (click)="setCategory('hotel')">
+      <i class="bi bi-building me-2"></i>Hotels
+    </button>
+    <button [class.active]="selectedCategory === 'restaurant'" (click)="setCategory('restaurant')">
+      <i class="bi bi-cup-hot me-2"></i>Restaurants
+    </button>
+    <button [class.active]="selectedCategory === 'tour'" (click)="setCategory('tour')">
+      <i class="bi bi-compass me-2"></i>Tours
+    </button>
+  </div>
+
+  <!-- Destinations -->
+  <div class="destinations-grid" *ngIf="filteredDestinations.length > 0">
+    <div class="destination-card" *ngFor="let destination of filteredDestinations">
+      <div class="card-image-wrapper">
+        <img [src]="destination.image || '/assets/images/placeholder.jpg'" [alt]="destination.name">
+        <div class="card-badge" [ngSwitch]="destination.type">
+          <i class="bi bi-building" *ngSwitchCase="'hotel'"></i>
+          <i class="bi bi-cup-hot-fill" *ngSwitchCase="'restaurant'"></i>
+          <i class="bi bi-compass-fill" *ngSwitchCase="'tour'"></i>
+        </div>
+      </div>
+      <div class="card-content">
+      <!--<h3>{{destination.name}}</h3>-->  
+    <!--      <h3 appHighlight [highlightColor]="'lightGreen'">{{destination.name | titleCase}}</h3>-->  
+      <h3>{{destination.name | titleCase}}</h3>
+        <p class="location">
+          <i class="bi bi-geo-alt-fill me-2"></i>
+          {{destination.location}}
+        </p>
+        <div class="rating">
+          <div class="stars">
+            <i class="bi bi-star-fill" *ngFor="let star of [1,2,3,4,5]"></i>
+          </div>
+          <span class="rating-value">{{destination.rating}}</span>
+        </div>
+        <!-- Amenities -->
+        <div class="amenities">
+          <span *ngFor="let amenity of destination.amenities">
+            <i class="bi bi-check2-circle me-1"></i>
+            {{amenity}}
+          </span>
+        </div>
+        <div class="price-tag">
+          <span class="currency">{{destination.currency}}</span>
+          <span class="amount">{{destination.price}}</span>
+          <span class="period">/night</span>
+        </div>
+        <button class="btn-view" (click)="viewDetails(destination)">
+          <i class="bi bi-arrow-right-circle me-2"></i>
+          View Details
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="no-results" *ngIf="filteredDestinations.length === 0">
+    <i class="bi bi-emoji-frown"></i>
+    <p>No destinations found. Try adjusting your search criteria.</p>
+  </div>
+</div>
+

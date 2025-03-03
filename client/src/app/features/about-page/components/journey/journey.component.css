@@ -1,0 +1,16 @@
+.bg-success-light {
+    background-color: #ECFDF5;
+  }
+  .text-success {
+    color: #059669 !important;
+  }
+  .journey-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .journey-item {
+    margin-bottom: 1rem;
+  }
+  .journey-item:last-child {
+    margin-bottom: 0;
+  }

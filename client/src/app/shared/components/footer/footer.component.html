@@ -1,0 +1,39 @@
+<footer class="bg-success text-white py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-geo-alt-fill fs-3 me-2"></i>
+            <h3 class="h1 mb-0">GoLocal Guide</h3>
+          </div>
+          <p class="mb-4">
+            A platform to support you in discovering local experiences and 
+            managing your travel adventures.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a *ngFor="let link of navigationLinks" 
+               [routerLink]="link.path"
+               class="text-white text-decoration-none">
+              {{link.name}}
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <h4 class="mb-3">Follow us on</h4>
+          <div class="d-flex justify-content-md-end gap-3">
+            <a  *ngFor="let social of socialLinks"
+               [href]="social.url"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="text-white hover-scale icon-large">
+              <i [class]="social.icon"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr class="my-4 border-white opacity-25">
+      <p class="text-center mb-0">
+        &copy; {{currentYear}} GoLocal Guide. All rights reserved.
+      </p>
+    </div>
+  </footer>

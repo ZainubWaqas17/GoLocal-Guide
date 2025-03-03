@@ -1,0 +1,22 @@
+<div class="py-5 bg-white">
+<div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-7 fw-bold text-dark mb-3">Our Team</h2>
+      <p class="fs-5 text-muted mx-auto" style="max-width: 600px;">
+        Meet the passionate individuals behind GoLocal Guide
+      </p>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let member of teamMembers" [@fadeIn]>
+        <div class="text-center">
+          <div class="team-avatar mx-auto mb-4">
+            <img [src]="member.image" [alt]="member.name" class="rounded-circle">
+          </div>
+          <h3 class="fs-4 fw-semibold text-dark">{{member.name}}</h3>
+          <p class="text-muted">{{member.role}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

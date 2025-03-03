@@ -1,0 +1,14 @@
+
+    .text-success {
+      color: #006666 !important;
+    }
+    .bg-light-success {
+      background-color: #E8F5F5;
+    }
+    .max-width-md {
+      max-width: 32rem;
+    }
+    .hover-success:hover {
+      color: #006666 !important;
+      text-decoration: none;
+    }

@@ -1,0 +1,241 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css");
+
+.booking-form-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  color: #00a86b;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h2 i {
+  color: #00a86b;
+  margin-right: 0.5rem;
+}
+
+.booking-form {
+  display: grid;
+  gap: 2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  color: #555;
+  font-weight: 500;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+label i {
+  color: #00a86b;
+}
+
+.form-control {
+  padding: 0.875rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background-color: #fff;
+}
+
+.form-control:hover {
+  border-color: #00a86b50;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #00a86b;
+  box-shadow: 0 0 0 4px rgba(0, 168, 107, 0.1);
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.date-range {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.date-picker::after {
+  content: '';
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: #00a86b;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'/%3E%3C/svg%3E");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.date-picker input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.date-picker {
+  position: relative;
+}
+
+.date-picker input[type="date"] {
+  position: relative;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.checkbox input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+}
+
+.checkbox input[type="checkbox"]:checked {
+  background-color: #00a86b;
+  border-color: #00a86b;
+}
+
+.checkbox input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.booking-summary {
+  background-color: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+
+.booking-summary h3 {
+  color: #333;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.booking-summary h3 i {
+  color: #00a86b;
+}
+
+.summary-details p {
+  display: flex;
+  justify-content: space-between;
+  color: #555;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.summary-details p:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  color: #00a86b;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.global-error {
+  background-color: #fee2e2;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #e5e7eb;
+  color: #9ca3af;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  cursor: not-allowed;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-primary.btn-enabled {
+  background-color: #007d50;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-primary.btn-enabled:hover {
+  background-color: #009660;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .booking-form-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .form-row,
+  .date-range {
+    grid-template-columns: 1fr;
+  }
+}

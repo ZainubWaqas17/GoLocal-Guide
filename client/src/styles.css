@@ -1,0 +1,34 @@
+/* Only necessary imports */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+:root {
+  --bs-success: #059669;
+  --bs-success-rgb: 5, 150, 105;
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* Ensure 'Inter' is applied correctly */
+}
+
+.text-success {
+  color: var(--bs-success) !important;
+}
+
+.bg-success {
+  background-color: var(--bs-success) !important;
+}
+h
+.btn-success {
+  background-color: var(--bs-success);
+  border-color: var(--bs-success);
+}
+
+.btn-success:hover {
+  background-color: #047857;
+  border-color: #047857;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

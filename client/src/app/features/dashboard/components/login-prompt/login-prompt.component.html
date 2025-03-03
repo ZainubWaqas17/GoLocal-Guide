@@ -1,0 +1,12 @@
+<div class="login-prompt">
+    <div class="prompt-content">
+      <i class="bi bi-shield-lock"></i>
+      <h2>Login Required</h2>
+      <p>{{ data.message }}</p>
+      
+      <div class="prompt-actions">
+        <button class="btn-cancel" (click)="onNoClick()">Cancel</button>
+        <button class="btn-login" [mat-dialog-close]="true">Login</button>
+      </div>
+    </div>
+  </div>

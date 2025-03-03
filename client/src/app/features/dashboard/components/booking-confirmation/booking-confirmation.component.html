@@ -1,0 +1,88 @@
+<div class="confirmation-container" *ngIf="booking && destination">
+  <div class="confirmation-card">
+    <div class="success-icon">
+      <i class="bi bi-check-circle-fill"></i>
+    </div>
+    
+    <h2>Booking Confirmation</h2>
+    <p class="thank-you">Thank you for your booking!</p>
+    
+    <div class="reference">
+      <h3><i class="bi bi-bookmark-check"></i> Booking Reference</h3>
+      <p>{{ bookingReference }}</p>
+    </div>
+    
+    <div class="booking-details">
+      <h3><i class="bi bi-calendar-check"></i> Booking Details</h3>
+      <div class="details-grid">
+        <div class="detail-item">
+          <i class="bi bi-building"></i>
+          <div>
+            <h4>Destination</h4>
+            <p>{{ destination.name }}</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <i class="bi bi-calendar-plus"></i>
+          <div>
+            <h4>Check-in Date</h4>
+            <p>{{ booking.checkInDate | date }}</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <i class="bi bi-calendar-minus"></i>
+          <div>
+            <h4>Check-out Date</h4>
+            <p>{{ booking.checkOutDate | date }}</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <i class="bi bi-people"></i>
+          <div>
+            <h4>Guests</h4>
+            <p>{{ booking.guests }}</p>
+          </div>
+        </div>
+        <div class="detail-item price">
+          <i class="bi bi-credit-card"></i>
+          <div>
+            <h4>Total Price</h4>
+            <p>{{ booking.totalPrice | currency:'USD':'symbol':'1.2-2' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="guest-details">
+      <h3><i class="bi bi-person-circle"></i> Guest Information</h3>
+      <div class="details-grid">
+        <div class="detail-item">
+          <i class="bi bi-person"></i>
+          <div>
+            <h4>Name</h4>
+            <p>{{ booking.firstName }} {{ booking.lastName }}</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <i class="bi bi-envelope"></i>
+          <div>
+            <h4>Email</h4>
+            <p>{{ booking.email }}</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <i class="bi bi-telephone"></i>
+          <div>
+            <h4>Phone</h4>
+            <p>{{ booking.phone }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button (click)="returnToDashboard()" class="return-btn">
+      <i class="bi bi-arrow-left"></i> Return to Dashboard
+    </button>
+  </div>
+</div>
+

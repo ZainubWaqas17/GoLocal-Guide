@@ -1,0 +1,32 @@
+<aside class="sidebar">
+  <div class="sidebar-content">
+    <!-- Logo Section -->
+    <div class="logo-section">
+      <div class="logo-container"(click)="goToHome()" style="cursor: pointer">
+        <i class="bi bi-geo-alt-fill"></i>
+        <span>GoLocal Guide </span> 
+      </div>
+    </div>
+
+    <!-- Navigation Items -->
+    <nav class="nav-menu">
+      <a *ngFor="let item of navItems"
+         [routerLink]="item.route"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{exact: item.exact || false}"
+         class="nav-item">
+        <i [class]="'bi ' + item.icon"></i>
+        <span>{{item.label}}</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Logout Section -->
+  <div class="logout-section" *ngIf = "isLoggedIn">
+    <a href="#" class="nav-item" (click)="logout()">
+      <i class="bi bi-box-arrow-left"></i>
+      <span>Log Out</span>
+    </a>
+  </div>
+</aside>
+

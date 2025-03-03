@@ -1,0 +1,9 @@
+.hover-scale {
+    transition: transform 0.2s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+ .icon-large{
+    font-size: 1.5rem;
+  }

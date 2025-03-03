@@ -1,0 +1,28 @@
+<div class="py-5 bg-success-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-7 fw-bold text-dark mb-3">Our Journey</h2>
+        <p class="fs-5 text-muted mx-auto" style="max-width: 600px;">
+          From idea to reality: The story of GoLocal Guide
+        </p>
+      </div>
+      
+      <div class="journey-timeline">
+        <div class="journey-item" *ngFor="let item of journeyItems; let i = index" 
+             [@fadeIn]="{ value: '', params: { delay: (300 + (i * 100)) + 'ms' }}">
+          <div class="d-flex align-items-start gap-4">
+            <div class="journey-year text-success fw-bold fs-4" style="width: 100px;">
+              {{item.year}}
+            </div>
+            <div class="journey-arrow text-success">
+              <i class="bi bi-arrow-right"></i>
+            </div>
+            <div class="journey-content">
+              <h3 class="fs-4 fw-semibold text-dark">{{item.title}}</h3>
+              <p class="text-muted">{{item.description}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

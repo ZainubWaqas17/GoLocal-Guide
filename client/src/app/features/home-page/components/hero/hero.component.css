@@ -1,0 +1,78 @@
+/* Hero Section */
+.hero {
+    height: 100vh;
+  }
+  
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.7);
+  }
+  
+  .text-success-light {
+    color: #059669;
+    opacity: 0.9;
+  }
+  
+  /* Heading Styles */
+  .display-5 {
+    font-size: 45px;
+  }
+  
+  /* Button Styling */
+  button {
+    font-size: 1rem; /* Default font size */
+    padding: 10px 20px;
+    border-radius: 50px; /* Ensure the button has rounded edges */
+  }
+  
+  /* Responsive adjustments for button */
+  @media (max-width: 1200px) { /* Large screens */
+    button {
+      font-size: 0.95rem; /* Slightly smaller font size */
+      padding: 8px 18px; /* Adjust padding to be more compact */
+    }
+  }
+  
+  @media (max-width: 992px) { /* Medium screens */
+    button {
+      font-size: 0.9rem; /* Smaller font size */
+      padding: 6px 15px; /* Reduced padding */
+    }
+  }
+  
+  @media (max-width: 768px) { /* Small screens (tablets and below) */
+    button {
+      font-size: 0.85rem; /* Further reduce font size */
+      padding: 5px 12px; /* Adjust padding for a more compact button */
+    }
+  }
+  
+  @media (max-width: 576px) { /* Extra small screens (phones) */
+    button {
+      font-size: 0.75rem; /* Smaller font size for mobile screens */
+      padding: 5px 10px; /* Reduced padding */
+    }
+  }
+  
+  /* Additional responsive adjustments for text */
+  @media (max-width: 768px) {
+    .display-5 {
+      font-size: 30px; /* Smaller font size for screens <= 768px */
+    }
+  
+    .fs-5 {
+      font-size: 1.2rem; /* Adjust font size for small screens */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .display-5 {
+      font-size: 25px; /* Further reduce font size for phones */
+    }
+  
+    .fs-5 {
+      font-size: 1rem; /* Further adjust font size for phones */
+    }
+  }
+  

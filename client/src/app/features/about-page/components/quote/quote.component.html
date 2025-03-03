@@ -1,0 +1,57 @@
+<section class="pt-5 pb-4 px-4 bg-white mb-n3">
+  <h2 class="display-6 fw-bold text-success text-center mb-4">
+    Together, We're Here To Make A Difference
+  </h2>
+  <div
+    class="position-relative bg-success p-5 rounded-4 overflow-hidden"
+    [@fadeIn]
+  >
+    <!-- Top-left Quote -->
+    <div
+      class="position-absolute start-0 top-0 text-success-light opacity-50"
+      style="transform: translate(20%, 20%)"
+    >
+      <i class="bi bi-quote fs-1"></i>
+    </div>
+
+    <!-- Bottom-right Quote -->
+    <div
+      class="position-absolute end-0 bottom-0 text-success-light opacity-50"
+      style="transform: rotate(180deg) translate(-5%, -5%)"
+    >
+      <i class="bi bi-quote fs-1"></i>
+    </div>
+
+    <div class="position-relative mx-auto text-center" style="max-width: 700px">
+      <p
+        class="fs-5 text-white mb-4 fw-light fst-italic"
+        [@slideIn]="{ value: '', params: { delay: '400ms' } }"
+      >
+        At GoLocal Guide, we are revolutionizing the way people experience local
+        travel. We're building bridges between travelers and communities,
+        creating authentic connections that transform ordinary trips into
+        extraordinary journeys.
+      </p>
+
+      <p
+        class="fs-5 text-white fw-light fst-italic"
+        [@slideIn]="{ value: '', params: { delay: '600ms' } }"
+      >
+        More than just a platform, GoLocal Guide is a committed partner in
+        fostering sustainable tourism. We ensure that both travelers and local
+        communities thrive together, creating lasting impacts that go beyond
+        just sightseeing. Together, we're redefining the future of travel.
+      </p>
+    </div>
+
+    <!-- Decorative circles -->
+    <div
+      class="position-absolute start-0 bottom-0 bg-success-light rounded-circle opacity-10"
+      style="width: 128px; height: 128px; transform: translate(-50%, 50%)"
+    ></div>
+    <div
+      class="position-absolute end-0 top-0 bg-success-light rounded-circle opacity-10"
+      style="width: 96px; height: 96px; transform: translate(50%, -50%)"
+    ></div>
+  </div>
+</section>

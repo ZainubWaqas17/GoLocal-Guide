@@ -1,0 +1,73 @@
+/* Global styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+  }
+  
+  h2, h3 {
+    font-weight: 500;
+  }
+  
+  p {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+  
+  /* Feature box hover effect */
+  .feature-box {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 8px;
+  }
+  
+  .feature-box:hover {
+    background-color: #effafafb;
+    transform: translateY(-5px);
+    cursor: pointer;
+  }
+  
+  /* Feature icon styling */
+  .feature-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #ECFDF5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #059669;
+    font-size: 1.5rem;
+  }
+  
+  /* Responsive font size for the main heading */
+  h2.text-center {
+    font-size: 2.3rem; /* Default size */
+  }
+  
+  /* Media Queries for smaller screens */
+  @media (max-width: 1200px) {
+    h2.text-center {
+      font-size: 2rem; /* Slightly smaller font size for large screens */
+    }
+  }
+  
+  @media (max-width: 992px) {
+    h2.text-center {
+      font-size: 1.6rem; /* Further decrease font size for medium screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    h2.text-center {
+      font-size: 1.2rem; /* Smaller font size for small screens */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    h2.text-center {
+      font-size: 1rem; /* Further reduce font size for mobile screens */
+    }
+  }
+  
+  /* Add similar media queries for the paragraph if necessary */
+  

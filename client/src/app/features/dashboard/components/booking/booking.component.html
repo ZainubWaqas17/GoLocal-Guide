@@ -1,0 +1,72 @@
+<div class="booking-history-container">
+  <h2><i class="bi bi-journal-text"></i> Your Booking History</h2>
+
+  <div *ngIf="isLoading" class="loading-spinner">
+    <div class="spinner"></div>
+  </div>
+
+  <div *ngIf="error" class="error-message">
+    <i class="bi bi-exclamation-triangle"></i> {{ error }}
+  </div>
+
+  <div *ngIf="!isLoading && !error" class="booking-content">
+    <div *ngIf="bookings.length > 0" class="booking-table-container">
+      <table class="booking-table">
+        <thead>
+          <tr>
+            <th>Confirmation</th>
+            <th>Destination</th>
+            <th>Check-in</th>
+            <th>Check-out</th>
+            <th>Guests</th>
+            <th>Total Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let booking of bookings" class="booking-row">
+            <td><span class="confirmation-number">{{ booking.confirmationNumber }}</span></td>
+            <td>
+              <div class="destination-info">
+                <i class="bi bi-geo-alt"></i>
+                <span>{{ booking.destinationName }}</span>
+              </div>
+            </td>
+            <td>
+              <div class="date-info">
+                <i class="bi bi-calendar-check"></i>
+                <span>{{ booking.checkInDate | date:'mediumDate' }}</span>
+              </div>
+            </td>
+            <td>
+              <div class="date-info">
+                <i class="bi bi-calendar-x"></i>
+                <span>{{ booking.checkOutDate | date:'mediumDate' }}</span>
+              </div>
+            </td>
+            <td>
+              <div class="guests-info">
+                <i class="bi bi-people"></i>
+                <span>{{ booking.guests }}</span>
+              </div>
+            </td>
+            <td>
+              <div class="price-info">
+                <i class="bi bi-cash"></i>
+                <span>{{ booking.totalPrice | currency }}</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngIf="bookings.length === 0" class="no-bookings">
+      <div class="no-bookings-content">
+        <i class="bi bi-calendar-x"></i>
+        <h3>No Bookings Yet</h3>
+        <p>You haven't made any bookings. Start planning your next adventure!</p>
+        <a routerLink="/dashboard" class="btn-explore">Explore Destinations</a>
+      </div>
+    </div>
+  </div>
+</div>
+
