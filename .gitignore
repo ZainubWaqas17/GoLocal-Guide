@@ -21,8 +21,8 @@ coverage/
 .env.test
 
 # Angular environment files
-frontend/src/environments/environment.ts
-frontend/src/environments/environment.prod.ts
+client/src/environments/environment.ts
+client/src/environments/environment.prod.ts
 
 # Logs and cache
 logs/
