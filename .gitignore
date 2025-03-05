@@ -1,1 +1,37 @@
-node_modules
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-error.log
+
+# Angular build files
+dist/
+out-tsc/
+coverage/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Angular environment files
+frontend/src/environments/environment.ts
+frontend/src/environments/environment.prod.ts
+
+# Logs and cache
+logs/
+*.log
+pids/
+*.pid
+*.seed
+*.state
+
+# OS-specific files
+.DS_Store
+Thumbs.db
