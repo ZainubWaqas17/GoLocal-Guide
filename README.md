@@ -1,26 +1,26 @@
-# 🌍 GoLocal Guide  
+# GoLocal Guide  
 
 GoLocal Guide is a full-stack travel and booking platform built with the MEAN stack, designed to make trip planning effortless. Whether you're looking for accommodations, dining options, or exciting tours, GoLocal Guide provides a smooth and intuitive experience.  
 
-## 🚀 Features  
-- 🔍 **Browse Destinations** – Explore cities, attractions, and travel recommendations.  
-- 🏨 **Book Hotels, Restaurants, and Tours** – Seamless reservation system.  
-- 📅 **Manage Bookings** – View, modify, and cancel reservations.  
-- 📌 **User-Friendly Interface** – Clean and responsive UI.  
-- 🔐 **Secure Authentication** – User login and registration system.  
-- 🌐 **Fully Responsive** – Optimized for all devices.  
+## Features  
+- **Browse Destinations** – Explore cities, attractions, and travel recommendations.  
+- **Book Hotels, Restaurants, and Tours** – Seamless reservation system.  
+- **Manage Bookings** – View, modify, and cancel reservations.  
+- **User-Friendly Interface** – Clean and responsive UI.  
+- **Secure Authentication** – User login and registration system.  
+- **Fully Responsive** – Optimized for all devices.  
 
 ## 🛠 Tech Stack  
 
 ### Frontend:  
-- ⚡ Angular 16  
-- 🎨 Bootstrap  
-- 🎭 CSS  
+- Angular 16  
+- Bootstrap  
+- CSS  
 
 ### Backend:  
-- 🚀 Node.js  
-- 🔧 Express.js  
-- 🗄️ MongoDB  
+- Node.js  
+- Express.js  
+- MongoDB  
 
 ## Setup
 
