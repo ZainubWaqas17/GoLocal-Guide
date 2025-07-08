@@ -10,7 +10,7 @@ GoLocal Guide is a full-stack travel and booking platform built with the MEAN st
 - **Secure Authentication** – User login and registration system.  
 - **Fully Responsive** – Optimized for all devices.  
 
-## 🛠 Tech Stack  
+## Tech Stack  
 
 ### Frontend:  
 - Angular 16  
