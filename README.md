@@ -1,6 +1,8 @@
 # GoLocal Guide  
 GoLocal Guide is a full-stack travel and booking platform built with the MEAN stack, designed to make trip planning effortless. Whether you're looking for accommodations, dining options, or exciting tours, GoLocal Guide provides a smooth and intuitive experience.  
 https://golocal-guide.vercel.app/
+![Project Preview](./{ACC5954A-37BD-4B25-961E-7FE8CB294058}.png)
+
 
 ## Features  
 - **Browse Destinations** – Explore cities, attractions, and travel recommendations.  
